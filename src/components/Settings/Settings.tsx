@@ -26,6 +26,9 @@ import ThemeChooser from './ThemeChooser';
 import './Settings.scss';
 import EditViewSettings from './EditViewSettings';
 import BannerSettings from './BannerSettings';
+import BusolaTerminalSettings from './Terminal/BusolaTerminalSettings';
+import ExecSettings from './Terminal/ExecSettings';
+import AttachSettings from './Terminal/AttachSettings';
 
 export function Settings() {
   const { t } = useTranslation();
@@ -64,6 +67,18 @@ export function Settings() {
       id: 2,
     },
     {
+      title: t('settings.terminal.title'),
+      icon: (
+        <Icon
+          style={{ margin: 'auto' }}
+          name="command-line-interfaces"
+          accessibleName={t('settings.terminal.title')}
+          className="bsl-icon-xl"
+        />
+      ),
+      id: 3,
+    },
+    {
       title: t('settings.general.title'),
       description: t('settings.general.description'),
       icon: (
@@ -74,7 +89,7 @@ export function Settings() {
           className="bsl-icon-xl"
         />
       ),
-      id: 3,
+      id: 4,
     },
   ];
 
@@ -132,7 +147,7 @@ export function Settings() {
             </Tab>
           </TabContainer>
         </VerticalTabs.Content>
-        <VerticalTabs.Content id={3}>
+        <VerticalTabs.Content id={4}>
           <TabContainer
             tabLayout="Inline"
             contentBackgroundDesign="Transparent"
@@ -159,6 +174,28 @@ export function Settings() {
                 <OtherSettings />
                 <BannerSettings />
               </div>
+            </Tab>
+          </TabContainer>
+        </VerticalTabs.Content>
+        <VerticalTabs.Content id={3}>
+          <TabContainer
+            tabLayout="Inline"
+            contentBackgroundDesign="Transparent"
+          >
+            <Tab
+              key="busola-terminal-settings"
+              text={t('settings.terminal.busola-terminal.title')}
+            >
+              <BusolaTerminalSettings />
+            </Tab>
+            <Tab key="exec-settings" text={t('settings.terminal.exec.title')}>
+              <ExecSettings />
+            </Tab>
+            <Tab
+              key="attach-settings"
+              text={t('settings.terminal.attach.title')}
+            >
+              <AttachSettings />
             </Tab>
           </TabContainer>
         </VerticalTabs.Content>

@@ -1528,6 +1528,19 @@ settings:
     results-per-page: Results per page
     title: Other
     total-items: '{{itemsCount}} items'
+  terminal:
+    attach:
+      title: Pod Attach
+    busola-terminal:
+      title: Busola Terminal
+    default-command: Default command
+    default-image: Default image
+    exec:
+      title: Pod Exec
+    inactivity-timeout: Inactivity timeout
+    restore-defaults: Restore defaults
+    restore-defaults-button: Restore all
+    title: Terminal
   theme: Theme
 stateful-sets:
   description: <0>Stateful Set</0> is used for the management of Pods' deployment and scaling.
